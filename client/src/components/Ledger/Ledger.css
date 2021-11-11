@@ -1,0 +1,28 @@
+.ledger {
+  /* background-color: white; */
+  display: flex;
+  flex-direction: column;
+}
+
+.bucket_col {
+  width: var(--bucket-width);
+}
+
+.breakdown_col_1, .breakdown_col_2 {
+  width: var(--breakdown-width);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-bottom-style: solid;
+  border-color: var(--primary-line-color);
+}
+
+.breakdown_col_3 {
+  width: var(--breakdown-width);
+  border-right-style: double;
+  border-bottom-style: solid;
+  border-color: var(--primary-line-color);
+}
+
+.day_7_col, .day_30_col, .day_90_col {
+
+}

@@ -1,0 +1,28 @@
+.TableHeader {
+  display: flex;
+}
+
+.total_container {
+  /* background-color: turquoise; */
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding-left: 5%;
+  padding-right: 5%;
+  width: 25%;
+  border-bottom-style: solid;
+  border-right-style: double;
+  border-color: var(--primary-line-color);
+}
+
+.day_change_column {
+  display: flex;
+  justify-content: space-around;
+  padding-right: 5%;
+  padding-left: 5%;
+  padding-top: 1vh;
+  width: 25%;
+  /* border-left-style: double; */
+  border-bottom-style: solid;
+  border-color: var(--primary-line-color);
+}

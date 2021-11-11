@@ -1,0 +1,19 @@
+
+:root {
+  --app-background-color: #D9D1C7;
+  --info-text-color: black;
+  --bucket-text-color: D9D1C7;
+  --primary-line-color: #591A15;
+  --bucket-width: 35%;
+  --breakdown-width: 10%;
+}
+
+body {
+  margin: 0;
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif; */
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

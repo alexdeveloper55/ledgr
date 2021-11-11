@@ -1,0 +1,10 @@
+.day_list {
+  /* background-color: turquoise; */
+  float: right;
+  display: flex;
+  justify-content: space-around;
+  padding-right: 5%;
+  padding-left: 5%;
+  padding-top: 1vh;
+  width: 25%;
+}
