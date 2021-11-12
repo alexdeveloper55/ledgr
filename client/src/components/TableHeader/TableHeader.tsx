@@ -1,4 +1,4 @@
-import './TableHeader.css'
+import './TableHeader.css';
 import { Icon } from '@iconify/react';
 
 function TableHeader () {
@@ -14,9 +14,13 @@ function TableHeader () {
       <div className="breakdown_col_3"></div>
 
       <div className="day_change_column">
-        <div className="7day_col"><Icon icon="akar-icons:arrow-up" color="#149350" width="16" height="16" inline={true}/> 1.4%</div>
-        <div className="30day_col"><Icon icon="akar-icons:arrow-up" color="#149350" width="16" height="16" inline={true}/> 1.4%</div>
-        <div className="90Day_col"><Icon icon="akar-icons:arrow-up" color="#149350" width="16" height="16" inline={true}/> 1.4%</div>
+        <div className="day_7_col"><Icon icon="akar-icons:arrow-up" color="#149350" width="16" height="16" inline={true}/> 1.4%</div>
+        <div className="day_30_col"><Icon icon="akar-icons:arrow-up" color="#149350" width="16" height="16" inline={true}/> 1.4%</div>
+        <div className="day_90_col"><Icon icon="akar-icons:arrow-up" color="#149350" width="16" height="16" inline={true}/> 12.4%</div>
+      </div>
+
+      <div className="edit">
+        <Icon icon="ant-design:edit-outlined" color="#591a15" width="18" height="18" />
       </div>
 
     </div>

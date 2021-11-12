@@ -1,3 +1,4 @@
+import ClassRow from '../ClassRow/ClassRow';
 import Days from '../Days/Days';
 import TableHeader from '../TableHeader/TableHeader';
 import './Ledger.css'
@@ -7,6 +8,7 @@ function Ledger () {
     <div className="ledger">
       <Days/>
       <TableHeader/>
+      <ClassRow/>
     </div>
   )
 }

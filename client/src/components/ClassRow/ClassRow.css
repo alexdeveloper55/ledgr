@@ -1,0 +1,27 @@
+.ClassRow {
+  display: flex;
+}
+
+.ClassButton {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  height: 45px;
+  background-color: #260101;
+  opacity: 72%;
+  color: #D9D1C7;
+  border: none;;
+  border-radius: 5px;
+  font-family: 'Chivo', sans-serif;
+  font-size: 14px;
+}
+
+.ClassButtonText {
+  width: 90%;
+}
+
+.ClassSpacer {
+  width: 48%;
+  border-bottom-style: solid;
+  border-color: var(--primary-line-color);
+}

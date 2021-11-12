@@ -1,10 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Chivo&display=swap');
 
 :root {
   --app-background-color: #D9D1C7;
   --info-text-color: black;
-  --bucket-text-color: D9D1C7;
+  --bucket-text-color: #D9D1C7;
   --primary-line-color: #591A15;
-  --bucket-width: 35%;
+  --asset-class-width: 35%;
   --breakdown-width: 10%;
 }
 
