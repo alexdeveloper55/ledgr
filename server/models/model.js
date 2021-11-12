@@ -1,6 +1,10 @@
 const { Sequelize, DataTypes } = require('sequelize');
 const { sequelize } = require("./index");
 
+// One to many association
+// One User to many snapshots
+// One Asset_type to many snapshots
+
 const User = sequelize.define('User', {
   id: {
     type: DataTypes.INTEGER,
@@ -44,18 +48,18 @@ const Asset_snapshot = sequelize.define('Asset_snapshot', {
     primaryKey: true,
     allowNull: false
   },
-  user_id: {
-    type: DataTypes.INTEGER,
-    allowNull: false
-  },
+  // user_id: {
+  //   type: DataTypes.INTEGER,
+  //   allowNull: false
+  // },
   date: {
     type: DataTypes.DATE,
     allowNull: false
   },
-  asset_id: {
-    type: DataTypes.INTEGER,
-    allowNull: false
-  },
+  // asset_id: {
+  //   type: DataTypes.INTEGER,
+  //   allowNull: false
+  // },
   price: {
     type: DataTypes.FLOAT,
     allowNull: false
@@ -65,6 +69,16 @@ const Asset_snapshot = sequelize.define('Asset_snapshot', {
     allowNull: false
   }
 })
+
+User.hasMany(Asset_snapshot, {
+  foreignKey: 'user_id'
+});
+Asset_snapshot.belongsTo(User);
+
+Asset_type.hasMany(Asset_snapshot, {
+  foreignKey: 'asset_id'
+});
+Asset_snapshot.belongsTo(Asset_type);
 
 sequelize.sync();
 console.log("All models were synchronized successfully.");
