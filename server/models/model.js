@@ -73,12 +73,10 @@ const Asset_snapshot = sequelize.define('Asset_snapshot', {
 User.hasMany(Asset_snapshot, {
   foreignKey: 'user_id'
 });
-Asset_snapshot.belongsTo(User);
 
 Asset_type.hasMany(Asset_snapshot, {
   foreignKey: 'asset_id'
 });
-Asset_snapshot.belongsTo(Asset_type);
 
 sequelize.sync();
 console.log("All models were synchronized successfully.");
