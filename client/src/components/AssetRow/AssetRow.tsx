@@ -1,13 +1,13 @@
 import './AssetRow.css'
 import { Icon } from '@iconify/react';
 
-function AssetRow() {
+function AssetRow({ asset }:{ asset:string }) {
   return (
     <div className="AssetRow">
         <div className="asset_class_col">
           <div className="AssetSpacer"></div>
 
-          <div className="AssetTitle">Transferwise</div>
+          <div className="AssetTitle">{asset}</div>
         </div>
 
         <div className="breakdown_col_1_asset"></div>

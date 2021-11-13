@@ -16,6 +16,11 @@
   font-size: 14px;
 }
 
+.ClassButton:hover {
+  cursor: pointer;
+  opacity: 80%;
+}
+
 .ClassButtonText {
   width: 90%;
 }

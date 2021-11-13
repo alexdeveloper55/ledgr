@@ -3,13 +3,13 @@ import DropIcon from '../../assets/DropIcon.svg';
 import { Icon } from '@iconify/react';
 import AssetRow from '../AssetRow/AssetRow';
 
-function ClassRow () {
+function ClassRow ({cLass}:{cLass:string}) {
   return (
     <div className="FullClass">
       <div className="ClassRow">
         <div className="asset_class_col">
           <button className="ClassButton">
-            <div className="ClassButtonText">CASH</div>
+            <div className="ClassButtonText">{cLass.toUpperCase()}</div>
             <img src={DropIcon} alt="Drop Icon" />
           </button>
 
@@ -28,9 +28,9 @@ function ClassRow () {
 
         <div className="edit"></div>
       </div>
-      <AssetRow/>
-      <AssetRow/>
-      <AssetRow/>
+      {['transferwise', 'becu'].map((asset, index) => (
+        <AssetRow key={index} asset={asset}/>
+      ))}
     </div>
   )
 }
