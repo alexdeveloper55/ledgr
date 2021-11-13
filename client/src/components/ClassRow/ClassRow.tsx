@@ -1,16 +1,21 @@
+import { useState } from 'react';
 import './ClassRow.css';
 import DropIcon from '../../assets/DropIcon.svg';
 import { Icon } from '@iconify/react';
 import AssetRow from '../AssetRow/AssetRow';
 
 function ClassRow ({cLass}:{cLass:string}) {
+  const [expanded, setExpanded] = useState(false)
+
+  function toggleExpanded() {setExpanded(!expanded)}
+  
   return (
     <div className="FullClass">
       <div className="ClassRow">
         <div className="asset_class_col">
-          <button className="ClassButton">
+          <button className="ClassButton" onClick={toggleExpanded}>
             <div className="ClassButtonText">{cLass.toUpperCase()}</div>
-            <img src={DropIcon} alt="Drop Icon" />
+            <img src={DropIcon} alt="Drop Icon" className={expanded ? "rotated" : "normal"}/>
           </button>
 
           <div className="ClassSpacer"></div>
@@ -28,9 +33,7 @@ function ClassRow ({cLass}:{cLass:string}) {
 
         <div className="edit"></div>
       </div>
-      {['transferwise', 'becu'].map((asset, index) => (
-        <AssetRow key={index} asset={asset}/>
-      ))}
+      {expanded ? ['transferwise', 'becu'].map((asset, index) => (<AssetRow key={index} asset={asset}/>)) : null}
     </div>
   )
 }

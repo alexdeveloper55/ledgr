@@ -25,6 +25,15 @@
   width: 90%;
 }
 
+.rotated {
+  transform: rotate(90deg);
+  transition: transform 1s;
+}
+
+.normal {
+  transition: transform 1s;
+}
+
 .ClassSpacer {
   width: 48%;
   border-bottom-style: solid;
