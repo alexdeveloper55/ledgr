@@ -3,11 +3,16 @@ import './ClassRow.css';
 import DropIcon from '../../assets/DropIcon.svg';
 import { Icon } from '@iconify/react';
 import AssetRow from '../AssetRow/AssetRow';
+import ApiService from '../../ApiService';
 
 function ClassRow ({cLass}:{cLass:string}) {
   const [expanded, setExpanded] = useState(false)
 
-  function toggleExpanded() {setExpanded(!expanded)}
+  function toggleExpanded() {
+    setExpanded(!expanded)
+    ApiService.getSnapshots()
+      .then(snapshots => console.log(snapshots))
+  }
   
   return (
     <div className="FullClass">
