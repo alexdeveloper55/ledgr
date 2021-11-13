@@ -1,0 +1,19 @@
+.AssetRow {
+  display: flex;
+}
+
+.AssetSpacer {
+  display: flex;
+  align-items: center;
+  width: 50%;
+}
+
+.AssetTitle {
+  display: flex;
+  width: 48%;
+  height: 20px;
+  color: var(--primary-line-color);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-color: var(--primary-line-color);
+}

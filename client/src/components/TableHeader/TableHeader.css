@@ -1,34 +1,23 @@
 .TableHeader {
   display: flex;
+  /* border-bottom-style: solid;
+  border-color: var(--primary-line-color); */
+}
+
+.total_container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 35%;
+  border-right-style: double;
   border-bottom-style: solid;
   border-color: var(--primary-line-color);
 }
 
-.total_container {
-  background-color: turquoise;
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  padding-left: 5%;
-  padding-right: 5%;
-  width: 25%;
-  border-right-style: double;
+.total {
+  padding-left: 10%;
 }
 
-.day_change_column {
-  display: flex;
-  justify-content: space-around;
-  padding-right: 2%;
-  padding-left: 5%;
-  padding-top: 1vh;
-  width: 25%;
-  border-color: var(--primary-line-color);
-}
-
-.edit {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 3%;
-  padding: none;
+.total_value {
+  padding-right: 10%;
 }

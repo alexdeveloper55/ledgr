@@ -9,6 +9,9 @@ function Ledger () {
       <Days/>
       <TableHeader/>
       <ClassRow/>
+      <ClassRow/>
+      <ClassRow/>
+      <ClassRow/>
     </div>
   )
 }

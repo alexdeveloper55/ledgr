@@ -4,7 +4,6 @@
 }
 
 .asset_class_col {
-  background-color: tomato;
   width: var(--asset-class-width);
   display: flex;
   justify-content: space-between;
@@ -13,19 +12,98 @@
   padding-top: 15px;
 }
 
-.breakdown_col_1, .breakdown_col_2 {
+.breakdown_col_1_class, .breakdown_col_2_class {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
   width: var(--breakdown-width);
   border-right-style: solid;
   border-right-width: 1px;
   border-color: var(--primary-line-color);
+  border-bottom-style: solid;
+  border-color: var(--primary-line-color);
+  font-weight: 500;
 }
 
-.breakdown_col_3 {
+.breakdown_col_3_class {
   width: var(--breakdown-width);
   border-right-style: double;
+  border-color: var(--primary-line-color);
+  border-bottom-style: solid;
+  border-color: var(--primary-line-color);
+}
+
+.breakdown_col_1_asset, .breakdown_col_2_asset {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: var(--breakdown-width);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-color: var(--primary-line-color);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-color: var(--primary-line-color);
+  font-weight: 400;
+}
+
+.breakdown_col_3_asset {
+  width: var(--breakdown-width);
+  border-right-style: double;
+  border-color: var(--primary-line-color);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-color: var(--primary-line-color);
+}
+
+.day_change_column {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  padding-right: 2%;
+  padding-left: 5%;
+  padding-top: 1vh;
+  width: 25%;
+  border-color: var(--primary-line-color);
+  border-bottom-style: solid;
+  border-color: var(--primary-line-color);
+}
+
+.day_change_column_asset {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  padding-right: 2%;
+  padding-left: 5%;
+  padding-top: 1vh;
+  width: 25%;
+  border-color: var(--primary-line-color);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
   border-color: var(--primary-line-color);
 }
 
 .day_7_col, .day_30_col, .day_90_col {
   width: 33%;
+}
+
+.edit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3%;
+  padding: none;
+  border-bottom-style: solid;
+  border-color: var(--primary-line-color);
+}
+
+.edit_asset {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3%;
+  padding: none;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-color: var(--primary-line-color);
 }

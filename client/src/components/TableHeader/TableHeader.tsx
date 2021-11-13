@@ -9,9 +9,9 @@ function TableHeader () {
         <div className="total_value"><b>$9,893.17</b></div>
       </div>
 
-      <div className="breakdown_col_1"></div>
-      <div className="breakdown_col_2"></div>
-      <div className="breakdown_col_3"></div>
+      <div className="breakdown_col_1_class"></div>
+      <div className="breakdown_col_2_class"></div>
+      <div className="breakdown_col_3_class"></div>
 
       <div className="day_change_column">
         <div className="day_7_col"><Icon icon="akar-icons:arrow-up" color="#149350" width="16" height="16" inline={true}/> 1.4%</div>
