@@ -8,8 +8,8 @@ function Ledger () {
     <div className="ledger">
       <Days/>
       <TableHeader/>
-      {['cash', 'stock', 'currency'].map((cLass, index) => (
-        <ClassRow key={index} cLass={cLass}/>
+      {['cash', 'stock', 'currency'].map((assetClass, index) => (
+        <ClassRow key={index} assetClass={assetClass}/>
       ))}
     </div>
   )

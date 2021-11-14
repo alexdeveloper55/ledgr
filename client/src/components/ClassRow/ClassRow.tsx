@@ -5,13 +5,18 @@ import { Icon } from '@iconify/react';
 import AssetRow from '../AssetRow/AssetRow';
 import ApiService from '../../ApiService';
 
-function ClassRow ({cLass}:{cLass:string}) {
+function ClassRow ({assetClass}:{assetClass:string}) {
   const [expanded, setExpanded] = useState(false)
 
   function toggleExpanded() {
     setExpanded(!expanded)
-    ApiService.getSnapshots()
-      .then(snapshots => console.log(snapshots))
+    // THIS IS JUST HERE AS A TEST
+    // ApiService.getSnapshots()
+    //   .then(snapshots => console.log('snapshots: ', snapshots))
+    ApiService.getUsers()
+      .then(users => console.log('users: ', users))
+    // ApiService.createUser({username: "testUser", password_hash: "password123"})
+    //   .then(x => console.log("hello"))
   }
   
   return (
@@ -19,7 +24,7 @@ function ClassRow ({cLass}:{cLass:string}) {
       <div className="ClassRow">
         <div className="asset_class_col">
           <button className="ClassButton" onClick={toggleExpanded}>
-            <div className="ClassButtonText">{cLass.toUpperCase()}</div>
+            <div className="ClassButtonText">{assetClass.toUpperCase()}</div>
             <img src={DropIcon} alt="Drop Icon" className={expanded ? "rotated" : "normal"}/>
           </button>
 

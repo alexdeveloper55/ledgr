@@ -1,10 +1,6 @@
 const { Sequelize, DataTypes } = require('sequelize');
 const { sequelize } = require("./index");
 
-// One to many association
-// One User to many snapshots
-// One Asset_type to many snapshots
-
 const User = sequelize.define('User', {
   id: {
     type: DataTypes.INTEGER,
@@ -39,8 +35,6 @@ const Asset_type = sequelize.define('Asset_type', {
   }
 });
 
-
-// NEED TO ADD IN THE ASSOCIATIONS
 const Asset_snapshot = sequelize.define('Asset_snapshot', {
   id: {
     type: DataTypes.INTEGER,
@@ -48,18 +42,10 @@ const Asset_snapshot = sequelize.define('Asset_snapshot', {
     primaryKey: true,
     allowNull: false
   },
-  // user_id: {
-  //   type: DataTypes.INTEGER,
-  //   allowNull: false
-  // },
   date: {
     type: DataTypes.DATE,
     allowNull: false
   },
-  // asset_id: {
-  //   type: DataTypes.INTEGER,
-  //   allowNull: false
-  // },
   price: {
     type: DataTypes.FLOAT,
     allowNull: false
