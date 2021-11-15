@@ -1,32 +1,33 @@
 import './Navbar.css';
-import { useState, useEffect } from 'react';
 import { Icon } from '@iconify/react';
 import moment from 'moment';
-import ApiService from '../../ApiService';
 
-function Navbar () {
-  const [username, setUsername] = useState()
+function Navbar ({username}:{username:string}) {
+  // const [username, setUsername] = useState("")
 
-  useEffect((userId = 5) => {
+  // // userId = 8 is hard coded so that I have a working app. Need to update for user login
+  // useEffect((userId = 8) => {
 
-    ApiService.getUserById(userId)
-      .then(username => {
-        console.log("hopefully getting username");
-        console.log(username)
-        setUsername(username.username)
-      });
-  }, [])
+  //   ApiService.getUserById(userId)
+  //     .then(user => {
+  //       console.log("hopefully getting username");
+  //       console.log(user)
+  //       setUsername(user.username)
+  //     });
+  // }, [])
 
 
   return (
     <nav className="navbar">
       <ul className="views">
         <li><Icon icon="emojione-monotone:ledger" color="#591a15" width="36" height="36"/></li>
-        <li><Icon icon="emojione-monotone:ledger" color="#591a15" width="36" height="36"/></li>
+        <li><Icon icon="ant-design:pie-chart-outlined" color="#591a15" width="36" height="36" /></li>
+        <li><Icon icon="codicon:graph-line" color="#591a15" width="36" height="36" /></li>
+        <li><Icon icon="whh:spreadsheet" color="#591a15" width="36" height="36" /></li>
       </ul>
-      <div className="email">
+      <div className="user">
         <Icon icon="bx:bx-user" color="#591a15" width="36" height="36"/>
-        <p className="email_text">{username}</p>
+        <p className="username_text">{username}</p>
       </div>
       <div className="calendar">
         <Icon icon="ant-design:calendar-twotone" color="#591a15" width="24" height="24" inline={true}/>
