@@ -18,7 +18,6 @@ function App() {
 
     ApiService.getUserById(userId)
       .then(user => {
-        console.log("user: ", user);
         setUsername(user.username);
         setUserId(user.id);
       });

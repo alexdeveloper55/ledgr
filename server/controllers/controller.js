@@ -3,19 +3,20 @@
 const { Asset_snapshot } = require('../models/model');
 const db = require('../models/model');
 
-const getActiveClassesById = (req, res) => {
+const getActiveDetailsById = (req, res) => {
   console.log("get active classes by id request");
   try {
     db.Asset_type.findAll({
       where: {
-        '$Asset_snapshot.active$': true
+        '$Asset_snapshots.user_id$': req.params.id,
+        '$Asset_snapshots.active$': true
       },
       include: [{
         model: Asset_snapshot,
-        required: true,
-        as: 'Asset_snapshot'
+        required: true
       }]
     })
+      .then(classes => res.send(classes));
   } catch (error) {
     console.error(error);
     res.status(500);
@@ -82,5 +83,5 @@ module.exports = {
   getAllUsers,
   postUser,
   getUserById,
-  getActiveClassesById
+  getActiveDetailsById
 }

@@ -6,20 +6,41 @@ import TableHeader from '../TableHeader/TableHeader';
 import './Ledger.css'
 
 function Ledger ({userId}:{userId:number}) {
-  const [userSnapshots, setUserSnapshots] = useState([]);
+  const [userDetails, setUserDetails] = useState<Array<object>>([]);
 
   useEffect(() => {
 
-    ApiService.getUserActiveSnapshotsById(userId)
-      .then(snapshots => setUserSnapshots(snapshots))
-  }, [])
+    ApiService.getActiveDetailsById(userId)
+      .then(details => setUserDetails(details))
+  }, [userId])
+
+  useEffect(() => {
+    getClassArrayFromRawData(userDetails)
+
+  }, [userDetails])
+
+  // REMOVE THE CONSOLE LOGS!!!!!
+  function getClassArrayFromRawData(rawData:object[]) {
+    console.log(rawData)
+      const classArray = [];
+      let detail: any;
+      for (detail of rawData) {
+        classArray.push(detail.class)
+      }
+    console.log("yo: ", classArray)
+    return [...new Set(classArray)]
+  }
+
+  // function calculateTotal(rawData:object[]) {
+
+  // }
 
   return (
     <div className="ledger">
       <Days/>
       <TableHeader/>
-      {['maria', 'stock', 'currency'].map((assetClass, index) => (
-        <ClassRow key={index} assetClass={assetClass} />
+      {getClassArrayFromRawData(userDetails).map((assetClass, index) => (
+        <ClassRow key={index} assetClass={assetClass} /*userDetails={userDetails}*//>
       ))}
     </div>
   )
