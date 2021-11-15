@@ -21,6 +21,10 @@ function getUserById (id:number) {
   return fetchRequest('/user/' + id)
 }
 
+function getUserClassesById(id:number) {
+  return fetchRequest('/classes/' + id)
+}
+
 function createUser(body:{username:string, password_hash:string}) {
   console.log("inside apiservice")
   return fetchRequest('/users', {
@@ -36,7 +40,8 @@ const ApiService = {
   getSnapshots,
   getUsers,
   createUser,
-  getUserById
+  getUserById,
+  getUserClassesById
 }
 
 export default ApiService;

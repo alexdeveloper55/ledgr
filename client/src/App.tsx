@@ -6,7 +6,7 @@ import Dashboard from './components/Dashboard/Dashboard';
 import Navbar from './components/Navbar/Navbar';
 
 function App() {
-  
+  const [userId, setUserId] = useState(NaN)
   const [username, setUsername] = useState("")
 
   // userId = 8 is hard coded so that I have a working app. Need to update for user login
@@ -15,8 +15,9 @@ function App() {
     ApiService.getUserById(userId)
       .then(user => {
         console.log("hopefully getting username");
-        console.log(user)
-        setUsername(user.username)
+        console.log(user);
+        setUsername(user.username);
+        setUserId(user.id);
       });
   }, [])
   
@@ -24,7 +25,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Navbar username={username}/>
-        <Dashboard/>
+        <Dashboard userId={userId}/>
       </header>
     </div>
   );

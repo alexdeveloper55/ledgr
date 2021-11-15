@@ -1,10 +1,10 @@
 import Ledger from '../Ledger/Ledger';
 import './Dashboard.css';
 
-function Dashboard () {
+function Dashboard ({userId}:{userId:number}) {
   return (
     <div className="dashboard">
-      <Ledger/>
+      <Ledger userId={userId}/>
     </div>
   )
 }

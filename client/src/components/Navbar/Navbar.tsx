@@ -3,19 +3,6 @@ import { Icon } from '@iconify/react';
 import moment from 'moment';
 
 function Navbar ({username}:{username:string}) {
-  // const [username, setUsername] = useState("")
-
-  // // userId = 8 is hard coded so that I have a working app. Need to update for user login
-  // useEffect((userId = 8) => {
-
-  //   ApiService.getUserById(userId)
-  //     .then(user => {
-  //       console.log("hopefully getting username");
-  //       console.log(user)
-  //       setUsername(user.username)
-  //     });
-  // }, [])
-
 
   return (
     <nav className="navbar">
