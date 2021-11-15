@@ -1,7 +1,26 @@
 'use strict'
 
+const { Asset_snapshot } = require('../models/model');
 const db = require('../models/model');
 
+const getActiveClassesById = (req, res) => {
+  console.log("get active classes by id request");
+  try {
+    db.Asset_type.findAll({
+      where: {
+        '$Asset_snapshot.active$': true
+      },
+      include: [{
+        model: Asset_snapshot,
+        required: true,
+        as: 'Asset_snapshot'
+      }]
+    })
+  } catch (error) {
+    console.error(error);
+    res.status(500);
+  }
+}
 
 const getActiveSnapshotsById = (req, res) => {
   console.log("get active snapshots by id request");
@@ -62,5 +81,6 @@ module.exports = {
   getActiveSnapshotsById,
   getAllUsers,
   postUser,
-  getUserById
+  getUserById,
+  getActiveClassesById
 }

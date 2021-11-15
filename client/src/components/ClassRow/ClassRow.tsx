@@ -3,7 +3,6 @@ import './ClassRow.css';
 import DropIcon from '../../assets/DropIcon.svg';
 import { Icon } from '@iconify/react';
 import AssetRow from '../AssetRow/AssetRow';
-import ApiService from '../../ApiService';
 
 function ClassRow ({assetClass}:{assetClass:string}) {
   const [expanded, setExpanded] = useState(false)

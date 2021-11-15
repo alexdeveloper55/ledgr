@@ -1,3 +1,5 @@
+// JESS - would be nice to have this in an ENV file :)
+
 const BASE_URL = "http://localhost:3001";
 
 function fetchRequest (path:string, options?:any) {
@@ -26,7 +28,6 @@ function getUserActiveSnapshotsById(id:number) {
 }
 
 function createUser(body:{username:string, password_hash:string}) {
-  console.log("inside apiservice")
   return fetchRequest('/users', {
     method: "POST",
     headers: {

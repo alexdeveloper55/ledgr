@@ -4,7 +4,8 @@ const dbReqs = require('./controllers/controller');
 
 router.get('/snapshots/:id', dbReqs.getActiveSnapshotsById);
 router.get('/users', dbReqs.getAllUsers);
-router.get('/user/:id', dbReqs.getUserById)
+router.get('/user/:id', dbReqs.getUserById);
+router.get('/classes/:id', dbReqs.getActiveClassesById);
 
 
 router.post('/users', dbReqs.postUser);

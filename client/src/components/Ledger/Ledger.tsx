@@ -7,19 +7,18 @@ import './Ledger.css'
 
 function Ledger ({userId}:{userId:number}) {
   const [userSnapshots, setUserSnapshots] = useState([]);
-  console.log(userId);
 
-  // useEffect(() => {
-  //   ApiService.getUserActiveSnapshotsById(userId)
-  //     .then(snapshots => setUserSnapshots(snapshots))
-  // })
+  useEffect(() => {
 
+    ApiService.getUserActiveSnapshotsById(userId)
+      .then(snapshots => setUserSnapshots(snapshots))
+  }, [])
 
   return (
     <div className="ledger">
       <Days/>
       <TableHeader/>
-      {['cash', 'stock', 'currency'].map((assetClass, index) => (
+      {['maria', 'stock', 'currency'].map((assetClass, index) => (
         <ClassRow key={index} assetClass={assetClass} />
       ))}
     </div>
