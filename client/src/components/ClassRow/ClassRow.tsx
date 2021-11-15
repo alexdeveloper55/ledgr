@@ -10,13 +10,6 @@ function ClassRow ({assetClass}:{assetClass:string}) {
 
   function toggleExpanded() {
     setExpanded(!expanded)
-    // THIS IS JUST HERE AS A TEST
-    // ApiService.getSnapshots()
-    //   .then(snapshots => console.log('snapshots: ', snapshots))
-    ApiService.getUsers()
-      .then(users => console.log('users: ', users))
-    // ApiService.createUser({username: "testUser", password_hash: "password123"})
-    //   .then(x => console.log("hello"))
   }
   
   return (
