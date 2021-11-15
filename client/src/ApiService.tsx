@@ -21,8 +21,8 @@ function getUserById (id:number) {
   return fetchRequest('/user/' + id)
 }
 
-function getUserClassesById(id:number) {
-  return fetchRequest('/classes/' + id)
+function getUserActiveSnapshotsById(id:number) {
+  return fetchRequest('/snapshots/' + id)
 }
 
 function createUser(body:{username:string, password_hash:string}) {
@@ -41,7 +41,7 @@ const ApiService = {
   getUsers,
   createUser,
   getUserById,
-  getUserClassesById
+  getUserActiveSnapshotsById
 }
 
 export default ApiService;

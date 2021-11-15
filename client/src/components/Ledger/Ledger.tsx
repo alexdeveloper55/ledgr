@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ApiService from '../../ApiService';
 import ClassRow from '../ClassRow/ClassRow';
 import Days from '../Days/Days';
@@ -6,13 +6,14 @@ import TableHeader from '../TableHeader/TableHeader';
 import './Ledger.css'
 
 function Ledger ({userId}:{userId:number}) {
-  const [userClasses, setUserClasses] = useState([]);
+  const [userSnapshots, setUserSnapshots] = useState([]);
   console.log(userId);
 
-  function getUserClasses (userId: number) {
-    ApiService.getUserClassesById(userId)
-      .then(classes => setUserClasses(classes))
-  }
+  // useEffect(() => {
+  //   ApiService.getUserActiveSnapshotsById(userId)
+  //     .then(snapshots => setUserSnapshots(snapshots))
+  // })
+
 
   return (
     <div className="ledger">

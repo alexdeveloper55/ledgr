@@ -6,11 +6,11 @@ import Dashboard from './components/Dashboard/Dashboard';
 import Navbar from './components/Navbar/Navbar';
 
 function App() {
-  const [userId, setUserId] = useState(NaN)
+  const [userId, setUserId] = useState(0)
   const [username, setUsername] = useState("")
 
   // userId = 8 is hard coded so that I have a working app. Need to update for user login
-  useEffect((userId = 8) => {
+  useEffect((userId = 1) => {
 
     ApiService.getUserById(userId)
       .then(user => {

@@ -53,6 +53,10 @@ const Asset_snapshot = sequelize.define('Asset_snapshot', {
   amount_owned: {
     type: DataTypes.FLOAT,
     allowNull: false
+  },
+  active: {
+    type: DataTypes.BOOLEAN,
+    allowNull: false
   }
 })
 
@@ -64,7 +68,7 @@ Asset_type.hasMany(Asset_snapshot, {
   foreignKey: 'asset_id'
 });
 
-sequelize.sync();
+sequelize.sync()
 console.log("All models were synchronized successfully.");
 
 const db = { User, Asset_type, Asset_snapshot }

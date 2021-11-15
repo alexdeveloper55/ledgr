@@ -3,10 +3,15 @@
 const db = require('../models/model');
 
 
-const getAllSnapshots = (req, res) => {
-  console.log("get all snapshots request");
+const getActiveSnapshotsById = (req, res) => {
+  console.log("get active snapshots by id request");
   try {
-    db.Asset_snapshot.findAll()
+    db.Asset_snapshot.findAll({
+      where: {
+        user_id: req.params.id,
+        active: true
+      }
+    })
       .then(snapshots => res.send(snapshots));
   } catch (error) {
     console.error(error);
@@ -54,7 +59,7 @@ const postUser = (req, res) => {
 }
 
 module.exports = {
-  getAllSnapshots,
+  getActiveSnapshotsById,
   getAllUsers,
   postUser,
   getUserById
