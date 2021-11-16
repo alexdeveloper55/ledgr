@@ -16,10 +16,17 @@
 
 .AssetTitle {
   display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
   width: 48%;
   height: 20px;
   color: var(--primary-line-color);
   border-bottom-style: solid;
   border-bottom-width: 1px;
   border-color: var(--primary-line-color);
+}
+
+.asset_price {
+  padding-right: 5%;
+  font-size: 12px;
 }

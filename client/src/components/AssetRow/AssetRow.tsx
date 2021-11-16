@@ -37,7 +37,10 @@ function AssetRow(props: {asset: string, assetClass: string, userDetails: object
         <div className="asset_class_col">
           <div className="AssetEditDelete"><Icon className="delete" icon="fluent:delete-28-filled" color="#591a15" width="18" height="18" onClick={deleteAsset}/></div>
 
-          <div className="AssetTitle">{asset}</div>
+          <div className="AssetTitle">
+            <div className="asset">{asset}</div>
+            <div className="asset_price">{localSnapshot.Asset_snapshots[0].price !== 1 ? new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(localSnapshot.Asset_snapshots[0].price) : null}</div>
+          </div>
         </div>
 
         <div className="breakdown_col_1_asset"></div>
