@@ -14,9 +14,12 @@ function TableHeader ({total}:{total:number}) {
       <div className="breakdown_col_3_class"></div>
 
       <div className="day_change_column">
-        <div className="day_7_col"><Icon icon="akar-icons:arrow-up" color="#149350" width="16" height="16" inline={true}/> 1.4%</div>
+        {/* <div className="day_7_col"><Icon icon="akar-icons:arrow-up" color="#149350" width="16" height="16" inline={true}/> 1.4%</div>
         <div className="day_30_col"><Icon icon="akar-icons:arrow-up" color="#149350" width="16" height="16" inline={true}/> 1.4%</div>
-        <div className="day_90_col"><Icon icon="akar-icons:arrow-up" color="#149350" width="16" height="16" inline={true}/> 12.4%</div>
+        <div className="day_90_col"><Icon icon="akar-icons:arrow-up" color="#149350" width="16" height="16" inline={true}/> 12.4%</div> */}
+        <div className="day_7_col">N/A</div>
+        <div className="day_30_col">N/A</div>
+        <div className="day_90_col">N/A</div>
       </div>
 
       <div className="edit">

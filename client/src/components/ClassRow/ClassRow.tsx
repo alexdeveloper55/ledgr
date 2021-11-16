@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import './ClassRow.css';
 import DropIcon from '../../assets/DropIcon.svg';
-import { Icon } from '@iconify/react';
+// import { Icon } from '@iconify/react';
 import AssetRow from '../AssetRow/AssetRow';
 
-function ClassRow (props: {assetClass: string, userDetails: object[]}) {
-  const {assetClass, userDetails} = props
+function ClassRow (props: {assetClass: string, userDetails: object[], setUserDetails: any, userId:number}) {
+  const {assetClass, userDetails, setUserDetails, userId} = props
   const [expanded, setExpanded] = useState(false)
 
 
@@ -50,14 +50,17 @@ function ClassRow (props: {assetClass: string, userDetails: object[]}) {
         <div className="breakdown_col_3_class"></div>
 
         <div className="day_change_column">
-          <div className="day_7_col"><Icon icon="akar-icons:arrow-up" color="#149350" width="16" height="16" inline={true}/> 1.4%</div>
+          {/* <div className="day_7_col"><Icon icon="akar-icons:arrow-up" color="#149350" width="16" height="16" inline={true}/> 1.4%</div>
           <div className="day_30_col"><Icon icon="akar-icons:arrow-up" color="#149350" width="16" height="16" inline={true}/> 1.4%</div>
-          <div className="day_90_col"><Icon icon="akar-icons:arrow-up" color="#149350" width="16" height="16" inline={true}/> 12.4%</div>
+          <div className="day_90_col"><Icon icon="akar-icons:arrow-up" color="#149350" width="16" height="16" inline={true}/> 12.4%</div> */}
+          <div className="day_7_col">N/A</div>
+          <div className="day_30_col">N/A</div>
+          <div className="day_90_col">N/A</div>
         </div>
 
         <div className="edit"></div>
       </div>
-      {expanded ? getAssetArrayFromRawData(userDetails).map((asset, index) => (<AssetRow key={index} asset={asset} assetClass={assetClass} userDetails={userDetails}/>)) : null}
+      {expanded ? getAssetArrayFromRawData(userDetails).map((asset, index) => (<AssetRow key={index} asset={asset} assetClass={assetClass} userDetails={userDetails} setUserDetails={setUserDetails} userId={userId}/>)) : null}
     </div>
   )
 }

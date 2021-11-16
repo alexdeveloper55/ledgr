@@ -41,13 +41,31 @@ function createUser(body:{username:string, password_hash:string}) {
   })
 }
 
+function postNewSnapshot(body:{userId: number, newClass: string, newAsset: string, newAssetPrice: number, newAmountOwned: number}) {
+  return fetchRequest('/snapshots', {
+    method: "POST",
+    headers: {
+      "content-Type": "application/json"
+    },
+    body: JSON.stringify(body)
+  })
+}
+
+function removeSnapshotById(snapshotId: number) {
+  return fetchRequest('/snapshots/' + snapshotId, {
+    method: "PUT"
+  })
+}
+
 const ApiService = {
   getSnapshots,
   getUsers,
   createUser,
   getUserById,
   getUserActiveSnapshotsById,
-  getActiveDetailsById
+  getActiveDetailsById,
+  postNewSnapshot,
+  removeSnapshotById
 }
 
 export default ApiService;

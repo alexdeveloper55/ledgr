@@ -67,11 +67,56 @@ const getUserById = (req, res) => {
 
 const postUser = (req, res) => {
   console.log("post user request");
-  console.log(req.body);
   try {
     db.User.create(req.body)
       .then(user => res.send(user))
       .then(x => res.status(200));
+  } catch (error) {
+    console.error(error);
+    res.status(500);
+  }
+}
+
+const postNewSnapshot = async (req, res) => {
+  console.log("post new snapshot");
+  try {
+    let asset = await db.Asset_type.findAll({
+      where : {
+        class: req.body.newClass,
+        name: req.body.newAsset
+      }
+    })
+    if (!asset.length) {
+      asset = [await db.Asset_type.create({
+        class: req.body.newClass,
+        name: req.body.newAsset
+      })]
+    }
+    const snapshot = await db.Asset_snapshot.create({
+      date: Date.now(),
+      price: req.body.newAssetPrice,
+      asset_id: asset[0].id,
+      amount_owned: req.body.newAmountOwned,
+      active: true,
+      user_id: req.body.userId
+    })
+    res.send(snapshot);
+  } catch (error) {
+    console.error(error);
+    res.status(500);
+  }
+}
+
+const toggleSnapshotOff = async (req, res) => {
+  console.log("toggle snapshot off request")
+  try {
+    const snapshot = await Asset_snapshot.update({active: false}, {
+      where: {
+        id: req.params.id
+      }
+    })
+    console.log(snapshot)
+    res.send(snapshot)
   } catch (error) {
     console.error(error);
     res.status(500);
@@ -83,5 +128,7 @@ module.exports = {
   getAllUsers,
   postUser,
   getUserById,
-  getActiveDetailsById
+  getActiveDetailsById,
+  postNewSnapshot,
+  toggleSnapshotOff
 }

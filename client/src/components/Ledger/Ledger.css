@@ -110,3 +110,13 @@
   border-bottom-width: 1px;
   border-color: var(--primary-line-color);
 }
+
+.form_container, .add_button {
+  margin: auto;
+  width: 33%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
