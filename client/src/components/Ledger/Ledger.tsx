@@ -19,7 +19,6 @@ function Ledger ({userId}:{userId:number}) {
 
   }, [userDetails])
 
-  // REMOVE THE CONSOLE LOGS!!!!!
   function getClassArrayFromRawData(rawData:object[]) {
       const classArray = [];
       let detail: any;

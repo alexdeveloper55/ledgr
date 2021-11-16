@@ -48,6 +48,9 @@
 }
 
 .breakdown_col_3_asset {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
   width: var(--breakdown-width);
   border-right-style: double;
   border-color: var(--primary-line-color);

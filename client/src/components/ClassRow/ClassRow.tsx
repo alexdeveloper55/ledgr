@@ -12,6 +12,26 @@ function ClassRow (props: {assetClass: string, userDetails: object[]}) {
   function toggleExpanded() {
     setExpanded(!expanded);
   }
+
+  function getAssetArrayFromRawData(rawData:any) {
+    const assetArray = [];
+    for (let i = 0; i < rawData.length; i++) {
+      if (assetClass === rawData[i].class) {
+        assetArray.push(rawData[i].name);
+      }
+    }
+    return assetArray;
+  }
+
+  function calculateClassTotal(rawData:any) {
+    let classTotal = 0;
+    for (let i = 0; i < rawData.length; i++) {
+      if (assetClass === rawData[i].class) {
+        classTotal += rawData[i].Asset_snapshots[0].price * rawData[i].Asset_snapshots[0].amount_owned;
+      }
+    }
+    return classTotal
+  }
   
   return (
     <div className="FullClass">
@@ -25,7 +45,7 @@ function ClassRow (props: {assetClass: string, userDetails: object[]}) {
           <div className="ClassSpacer"></div>
         </div>
 
-        <div className="breakdown_col_1_class">$1,200.00</div>
+        <div className="breakdown_col_1_class">{new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(calculateClassTotal(userDetails))}</div>
         <div className="breakdown_col_2_class"></div>
         <div className="breakdown_col_3_class"></div>
 
@@ -37,7 +57,7 @@ function ClassRow (props: {assetClass: string, userDetails: object[]}) {
 
         <div className="edit"></div>
       </div>
-      {expanded ? ['transferwise', 'becu'].map((asset, index) => (<AssetRow key={index} asset={asset}/>)) : null}
+      {expanded ? getAssetArrayFromRawData(userDetails).map((asset, index) => (<AssetRow key={index} asset={asset} assetClass={assetClass} userDetails={userDetails}/>)) : null}
     </div>
   )
 }
