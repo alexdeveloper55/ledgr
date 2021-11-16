@@ -21,27 +21,30 @@ function Ledger ({userId}:{userId:number}) {
 
   // REMOVE THE CONSOLE LOGS!!!!!
   function getClassArrayFromRawData(rawData:object[]) {
-    console.log(rawData)
       const classArray = [];
       let detail: any;
       for (detail of rawData) {
         classArray.push(detail.class)
       }
-    console.log("yo: ", classArray)
     return [...new Set(classArray)]
   }
 
-  // function calculateTotal(rawData:object[]) {
-
-  // }
+  function calculateTotal(rawData:any) {
+    let total = 0
+    for (let i = 0; i < rawData.length; i++) {
+      total += rawData[i].Asset_snapshots[0].price * rawData[i].Asset_snapshots[0].amount_owned;
+    }
+    return total;
+  }
 
   return (
     <div className="ledger">
       <Days/>
-      <TableHeader/>
-      {getClassArrayFromRawData(userDetails).map((assetClass, index) => (
-        <ClassRow key={index} assetClass={assetClass} /*userDetails={userDetails}*//>
-      ))}
+      <TableHeader total={calculateTotal(userDetails)}/>
+      {getClassArrayFromRawData(userDetails).map(function (assetClass, index) {
+        return <ClassRow key={index} assetClass={assetClass} userDetails={userDetails}/>
+      }
+      )}
     </div>
   )
 }

@@ -1,12 +1,12 @@
 import './TableHeader.css';
 import { Icon } from '@iconify/react';
 
-function TableHeader () {
+function TableHeader ({total}:{total:number}) {
   return (
     <div className="TableHeader">
       <div className="total_container">
         <div className="total"><b>Total:</b></div>
-        <div className="total_value"><b>$9,893.17</b></div>
+        <div className="total_value"><b>{new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(total)}</b></div>
       </div>
 
       <div className="breakdown_col_1_class"></div>

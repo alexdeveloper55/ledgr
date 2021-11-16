@@ -4,11 +4,13 @@ import DropIcon from '../../assets/DropIcon.svg';
 import { Icon } from '@iconify/react';
 import AssetRow from '../AssetRow/AssetRow';
 
-function ClassRow ({assetClass}:{assetClass:string}) {
+function ClassRow (props: {assetClass: string, userDetails: object[]}) {
+  const {assetClass, userDetails} = props
   const [expanded, setExpanded] = useState(false)
 
+
   function toggleExpanded() {
-    setExpanded(!expanded)
+    setExpanded(!expanded);
   }
   
   return (
