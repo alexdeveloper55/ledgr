@@ -95,7 +95,7 @@ function Ledger ({userId}:{userId:number}) {
         {formIsOpen && 
 
         <div className="form_container">
-          <h1>Add an Asset</h1>
+          <h1 className="form_heading">Add an Asset</h1>
           <form className="form" onSubmit={handleSubmit}>
 
             <label htmlFor="form_class">Class: </label>
@@ -110,8 +110,8 @@ function Ledger ({userId}:{userId:number}) {
             <label htmlFor="form_amount_owned">Amount Owned: </label>
             <input type="number" step="any" name="input_amount_owned" placeholder="Insert amount owned..." value={newAmountOwned} onChange={handleAmountOwnedChange}/>
 
-            <button type="submit">Add</button>
-            <button onClick={() => setFormIsOpen(false)}>Cancel</button>
+            <button type="submit" className="form_button submit_button">Add</button>
+            <button onClick={() => setFormIsOpen(false)} className="form_button cancel_button">Cancel</button>
 
           </form>
         </div>
